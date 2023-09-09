@@ -1,6 +1,10 @@
 package love.iloveworld.continent;
 
 import com.mojang.logging.LogUtils;
+import love.iloveworld.continent.item.Duihuanquan;
+import love.iloveworld.continent.item.Foundetion;
+import love.iloveworld.continent.item.Jammer;
+import love.iloveworld.continent.item.Protection;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -16,8 +20,7 @@ import org.slf4j.Logger;
 
 
 @Mod(MainMod.MODID)
-public class MainMod
-{
+public class MainMod {
 
     public static final String MODID = "coldcontinent";
 
@@ -25,8 +28,24 @@ public class MainMod
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
     public static final RegistryObject<Block> myBlock = BLOCKS.register("myblock", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.CROP)));
-    public static final RegistryObject<Item> item =ITEMS.register("myblock", () -> new BlockItem(myBlock.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> item = ITEMS.register("myblock", () -> new BlockItem(myBlock.get(), new Item.Properties()));
+    /**
+     * 基地核心方块
+     */
+
+    public static final RegistryObject<Block> foundetion = BLOCKS.register("foundetion", () -> new Block(BlockBehaviour.Properties.of().strength(10.0f).sound(SoundType.METAL)));
+
+    /**
+     * 基地核心物品
+     */
+    public static final RegistryObject<Item> foundetionItem = ITEMS.register("foundetion", () -> new Foundetion(new Item.Properties()));
+    public static final RegistryObject<Item> protection = ITEMS.register("protection", () -> new Protection(new Item.Properties()));
+    public static final RegistryObject<Item> jammer = ITEMS.register("jammer", () -> new Jammer(new Item.Properties()));
+
+    public static final RegistryObject<Item> duihuanquan = ITEMS.register("duihuanquan", () -> new Duihuanquan(new Item.Properties()));
 
     public MainMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
