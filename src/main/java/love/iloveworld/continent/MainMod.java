@@ -22,7 +22,7 @@ public class MainMod
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-    public static final RegistryObject<Block> myBlock = BLOCKS.register("myBlock", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.CROP)));
+    public static final RegistryObject<Block> myBlock = BLOCKS.register("myblock", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.CROP)));
 
     public MainMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
