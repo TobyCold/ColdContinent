@@ -1,3 +1,6 @@
 {
-  "block.coldcontinent.myblock": "我的方块"
+  "block.coldcontinent.myblock": "我的方块",
+  "item.coldcontinent.foundation": "防卫器",
+  "item.coldcontinent.jammer": "干扰器",
+  "block.coldcontinent.protection": "联盟核心"
 }

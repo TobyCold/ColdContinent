@@ -1,3 +1,6 @@
 {
-  "block.coldcontinent.myblock": "My Block"
+  "block.coldcontinent.myblock": "My Block",
+  "block.coldcontinent.foundation": "foundation",
+  "block.coldcontinent.jammer": "jammer",
+  "block.coldcontinent.protection": "protection"
 }

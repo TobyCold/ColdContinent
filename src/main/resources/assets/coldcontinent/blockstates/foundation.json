@@ -1,0 +1,21 @@
+{
+	"variants": {
+		"": [
+			{
+				"model": "coldcontinent:block/foundation"
+			},
+			{
+				"model": "coldcontinent:block/foundation",
+				"y": 90
+			},
+			{
+				"model": "coldcontinent:block/foundation",
+				"y": 180
+			},
+			{
+				"model": "coldcontinent:block/foundation",
+				"y": 270
+			}
+		]
+	}
+}
