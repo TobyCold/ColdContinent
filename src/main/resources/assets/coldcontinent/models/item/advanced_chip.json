@@ -1,0 +1,15 @@
+{
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "coldcontinent:item/advanced_chip"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.47, 0.47, 1]
+		},
+		"ground": {
+			"translation": [0, 5.5, 0],
+			"scale": [0.44, 0.44, 0.35]
+		}
+	}
+}

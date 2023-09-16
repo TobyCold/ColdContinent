@@ -1,0 +1,15 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "coldcontinent:item/chip"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.48, 0.48, 0.75]
+		},
+		"ground": {
+			"translation": [0, 5.25, 0],
+			"scale": [0.56, 0.56, 0.37]
+		}
+	}
+}

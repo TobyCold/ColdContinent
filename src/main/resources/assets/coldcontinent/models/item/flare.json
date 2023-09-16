@@ -1,0 +1,11 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "coldcontinent:item/flare"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.63, 0.63, 1]
+		}
+	}
+}
