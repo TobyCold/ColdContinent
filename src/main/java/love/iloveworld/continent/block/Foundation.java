@@ -2,24 +2,39 @@ package love.iloveworld.continent.block;
 
 
 import love.iloveworld.continent.MainMod;
-import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-public class Foundation extends Item {
+import java.util.Set;
 
-    public  final Location Protection_One = new Location(7,7,3);
-    public  final Location Protection_Two = new Location(13,13,7);
-    public  final Location Protection_Three = new Location(25,25,13);
-    public Foundation(Properties p_41383_) {
-        super(p_41383_);
+
+public class Foundation extends Block {
+
+
+    private int BORDER_X;
+    private int BORDER_Y;
+    private int BORDER_Z;
+    private Player KING;
+    private Set<Player> participant;
+
+
+    public Foundation() {
+        super(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.CROP));
     }
-    private class Location{
+
+
+    private class Location {
         private int X;
         private int Y;
         private int Z;
-        private Location(){}
+
+        private Location() {
+        }
 
         public Location(int x, int y, int z) {
             X = x;
@@ -27,11 +42,25 @@ public class Foundation extends Item {
             Z = z;
         }
     }
-    @Mod.EventBusSubscriber(modid = MainMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-    private class Event{
-        @SubscribeEvent
-        public static void  breakBlock(BlockEvent.BreakEvent event){
 
+    @Mod.EventBusSubscriber(modid = MainMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+    private class Event {
+        /**
+         * 破坏方块
+         * @param event
+         */
+        @SubscribeEvent
+        public static void breakBlock(BlockEvent.BreakEvent event) {
+
+        }
+
+        /**
+         * 右击方块
+         * @param event
+         */
+        @SubscribeEvent
+        public static void rightClick(PlayerInteractEvent.RightClickBlock event) {
+            Player player = event.getEntity();
         }
     }
 }

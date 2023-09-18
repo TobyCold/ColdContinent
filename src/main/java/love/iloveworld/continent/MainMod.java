@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,6 +26,8 @@ public class MainMod {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
+    public static boolean DEBUG = true;
+
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
@@ -34,7 +37,7 @@ public class MainMod {
     public static final RegistryObject<Block> myBlock = BLOCKS.register("myblock", () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).sound(SoundType.CROP)));
     public static final RegistryObject<Item> myBlockItem = ITEMS.register("myblock", () -> new BlockItem(myBlock.get(), new Item.Properties()));
 
-    public static final RegistryObject<Block> foundation = BLOCKS.register("foundation", () -> new Block(BlockBehaviour.Properties.of().strength(10.0f).sound(SoundType.METAL)));
+    public static final RegistryObject<Block> foundation = BLOCKS.register("foundation", Foundation::new);
     public static final RegistryObject<Item> foundationItem = ITEMS.register("foundation", () -> new BlockItem(foundation.get(), new Item.Properties()));
 
     /**
@@ -127,6 +130,7 @@ public class MainMod {
         output.accept(syringe.get());
         output.accept(wooden_crate.get());
         output.accept(worn_cloth.get());
+
     }).build());
 
     /**
@@ -137,5 +141,6 @@ public class MainMod {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         TAB.register(modEventBus);
+
     }
 }
