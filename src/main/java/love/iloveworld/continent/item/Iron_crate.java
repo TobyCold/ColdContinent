@@ -8,8 +8,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fluids.FluidActionResult;
-
 import static love.iloveworld.continent.MainMod.DEBUG;
 import static love.iloveworld.continent.MainMod.iron_crate;
 
@@ -19,7 +17,6 @@ public class Iron_crate extends Item {
     }
 
     @Override
-
     public InteractionResult useOn(UseOnContext use) {
         Level level = use.getLevel();
         ItemStack itemInHand = use.getItemInHand();

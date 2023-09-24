@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import static love.iloveworld.continent.MainMod.myBlock;
 
+
 public class Duihuanquan extends Item {
     public Duihuanquan(Properties p_41383_) {
         super(p_41383_);

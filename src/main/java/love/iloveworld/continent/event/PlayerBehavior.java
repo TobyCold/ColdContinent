@@ -13,21 +13,10 @@ import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = MainMod.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class PlayerBehavior {
-
     @SubscribeEvent
     public static void playerJoin(PlayerEvent.PlayerLoggedInEvent event) {
         Player entity = event.getEntity();
         entity.sendSystemMessage(Component.literal("Hello World"));
-
-    }
-    @SubscribeEvent
-    public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-        // 在玩家登录时加载数据
-
-    }
-
-    @SubscribeEvent
-    public static void playerOut(PlayerEvent.SaveToFile event) {
 
     }
 
